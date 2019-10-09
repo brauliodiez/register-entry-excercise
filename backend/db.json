@@ -1,9 +1,11 @@
 {
   "registry": [
     {
+      "id": 1,
       "cardNumber": 1,
       "date": "2019-10-09",
-      "time": "13:12",
+      "inTime": "07:12",
+      "outTime": "14:30",
       "firstName": "Juan",
       "lastName": "De la Cruz López",
       "idNumber": "28172536Y",
@@ -13,9 +15,11 @@
       "picture": ""
     },
     {
+      "id": 2,
       "cardNumber": 1,
       "date": "2019-10-09",
-      "time": "13:12",
+      "inTime": "07:42",
+      "outTime": "17:30",
       "firstName": "Rubén",
       "lastName": "Sanz",
       "idNumber": "91724319Z",
