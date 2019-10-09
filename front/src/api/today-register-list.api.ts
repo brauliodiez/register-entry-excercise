@@ -1,20 +1,8 @@
 import Axios from "axios";
-import {baseRoute, routesLinks} from "core";
+import {RegisterEntityApi} from "./model";
+import {baseRoute, backendRoutes} from "./routes";
 
-export interface RegisterEntityApi {
-    cardNumber: string;
-    date: string;
-    time: string;
-    firstName: string;
-    lastName: string;
-    idNumber: string,
-    company: string;
-    host: string;
-    signature: string;
-    picture: string;
-}
-
-const registerCollection = `${baseRoute}${routesLinks.registerCollection}`;
+const registerCollection = `${baseRoute}${backendRoutes.registerCollection}`;
 const today = new Date().toJSON().slice(0,10);
 const todayRegisterCollection = `${registerCollection}?date=${today}`;
 
