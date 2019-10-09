@@ -1,0 +1,28 @@
+{
+  "registry": [
+    {
+      "cardNumber": 1,
+      "date": "2019-10-09",
+      "time": "13:12",
+      "firstName": "Juan",
+      "lastName": "De la Cruz López",
+      "idNumber": "28172536Y",
+      "company": "everis",
+      "host": "Spongebob Squarepants",
+      "signature": "",
+      "picture": ""
+    },
+    {
+      "cardNumber": 1,
+      "date": "2019-10-09",
+      "time": "13:12",
+      "firstName": "Rubén",
+      "lastName": "Sanz",
+      "idNumber": "91724319Z",
+      "company": "carver",
+      "host": "Spongebob Squarepants",
+      "signature": "",
+      "picture": ""
+    }
+  ]
+}
