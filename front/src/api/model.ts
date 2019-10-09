@@ -1,7 +1,9 @@
 export interface RegisterEntityApi {
+    id: string;
     cardNumber: string;
     date: string;
-    time: string;
+    inTime: string;
+    outTime: string;
     firstName: string;
     lastName: string;
     idNumber: string,
