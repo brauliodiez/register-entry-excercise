@@ -7,6 +7,7 @@ const registerCollection = `${baseRoute}${backendRoutes.registerCollection}`;
 const today = getTodayDate();
 const todayRegisterCollection = `${registerCollection}?date=${today}`;
 
+//Todo: Manage errors
 export const getTodayRegisterCollection = () : Promise<RegisterEntityApi[]> => {
     return new Promise<RegisterEntityApi[]>((resolve, reject) =>
         Axios.get<RegisterEntityApi[]>(todayRegisterCollection).then((response) => resolve(response.data)
