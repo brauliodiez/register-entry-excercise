@@ -1,4 +1,4 @@
-export interface CollectionRow {
+export interface entryEntity {
   cardNumber: string;
   date: string;
   firstName: string;

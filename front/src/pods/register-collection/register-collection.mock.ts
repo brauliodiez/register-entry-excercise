@@ -1,4 +1,6 @@
-export const entryCollectionMockData = [
+import { entryEntity } from "./register-collection.vm";
+
+export const entryCollectionMockData: entryEntity[] = [
   {
     cardNumber: "100",
     date: "10/10/2019",

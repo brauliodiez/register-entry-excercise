@@ -6,7 +6,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import { CollectionRow } from "./register-collection.vm";
+import { entryEntity } from "./register-collection.vm";
 import CreateIcon from "@material-ui/icons/Create";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface Props {
-  entryCollection: CollectionRow[];
+  entryCollection: entryEntity[];
 }
 
 export const RegisterCollectionComponent = (props: Props) => {
