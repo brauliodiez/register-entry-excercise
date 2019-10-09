@@ -1,0 +1,1 @@
+export const getTodayDate = () => new Date().toJSON().slice(0, 10);

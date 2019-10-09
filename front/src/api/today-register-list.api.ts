@@ -1,9 +1,10 @@
 import Axios from "axios";
 import {RegisterEntityApi} from "./model";
 import {baseRoute, backendRoutes} from "./routes";
+import {getTodayDate} from "../utils";
 
 const registerCollection = `${baseRoute}${backendRoutes.registerCollection}`;
-const today = new Date().toJSON().slice(0,10);
+const today = getTodayDate();
 const todayRegisterCollection = `${registerCollection}?date=${today}`;
 
 export const getTodayRegisterCollection = () : Promise<RegisterEntityApi[]> => {
