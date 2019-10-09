@@ -1,5 +1,7 @@
 import { generatePath } from "react-router";
 
+export const baseRoute: String = "http://localhost:3000/api/registry";
+
 type NavigationFunction = (id: string) => string;
 
 interface BaseRoutes {
