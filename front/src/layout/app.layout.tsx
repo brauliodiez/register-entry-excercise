@@ -20,6 +20,18 @@ const useStyles = makeStyles((theme: Theme) =>
 export const AppLayout: React.FunctionComponent = props => {
   const classes = useStyles(props);
 
+  const [currentTime, setCurrentTime] = React.useState("");
+  React.useEffect(() => {
+    setInterval(function() {
+      const d = new Date();
+      var hr = d.getHours();
+      var min = d.getMinutes();
+      var sec = d.getSeconds();
+
+      setCurrentTime(`${hr}:${min}:${sec}`);
+    }, 1000);
+  }, []);
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -39,7 +51,7 @@ export const AppLayout: React.FunctionComponent = props => {
             &nbsp;&nbsp;Register enter and exit
           </Typography>
           <Typography variant="h6" color="inherit" align="right">
-            &nbsp;&nbsp;Register 2
+            <span>{currentTime}</span>
           </Typography>
         </Toolbar>
       </AppBar>
