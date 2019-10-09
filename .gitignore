@@ -1,0 +1,10 @@
+node_modules
+.awcache
+.DS_Store
+dist/
+typings/
+*.orig
+.idea/
+*/src/**/*.js
+*/src/**/*.js.map
+package-lock.json
