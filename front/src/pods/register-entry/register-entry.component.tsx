@@ -1,12 +1,9 @@
 import React from "react";
-import clsx from "clsx";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import MenuItem from "@material-ui/core/MenuItem";
+import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import { registerEntryViewModel } from "./register-entry.vm";
-import Container from "@material-ui/core/Container";
 import SignatureCanvas from "react-signature-canvas";
-import { element } from "prop-types";
+import { Button } from "@material-ui/core";
+import { registerEntryViewModel } from "./register-entry.vm";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -15,23 +12,46 @@ const useStyles = makeStyles((theme: Theme) =>
       justifyContent: "center"
     },
     textField: {
+      display: "flex",
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
-      width: 200,
+      width: 200
     },
     dense: {
+      display: "flex",
       marginTop: 19
     },
-    elementWrapper: {
+    columnElementWrapper: {
+      display: "flex",
       flexDirection: "column"
     },
-    highElementWrapper: {
+    rowElementWrapper: {
+      display: "flex",
+      flexDirection: "row"
+    },
+    rowButtonElementWrapper: {
+      display: "flex",
+      justifyContent: "center",
       flexDirection: "row"
     },
     element: {
+      display: "flex",
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
       width: 100
+    },
+    innerLeft: {
+      display: "flex",
+      alignItems: "flex-start"
+    },
+    innerRight: {
+      display: "flex",
+      alignItems: "flex-end"
+    },
+    button: {
+      display: "flex",
+      justifyContent: "center",
+      margin: theme.spacing(1)
     }
   })
 );
@@ -47,79 +67,108 @@ export const RegisterEntryComponent = (props: Props) => {
   const { onChange, registerEntry } = props;
 
   return (
-    <form noValidate autoComplete="off">
-      <div className={classes.highElementWrapper}>
-        <div className={classes.elementWrapper}>
+    <div className={classes.container}>
+      <form noValidate autoComplete="off">
+        <div className={classes.rowElementWrapper}>
           <TextField
-            id="standard-name"
+            id="cardNumber"
             label="Card Number"
             className={classes.textField}
             value={registerEntry.cardNumber}
             onChange={onChange}
             margin="normal"
           />
+
           <TextField
-            id="standard-name"
+            id="date"
+            label="date"
+            type="date"
+            defaultValue={registerEntry.date}
+            disabled={true}
+            className={classes.textField}
+            InputLabelProps={{
+              shrink: true
+            }}
+          />
+          <TextField
+            id="time"
+            label="hour"
+            type="time"
+            defaultValue={registerEntry.hour}
+            disabled={true}
+            className={classes.textField}
+            InputLabelProps={{
+              shrink: true
+            }}
+            inputProps={{
+              step: 300 // 5 min
+            }}
+          />
+        </div>
+        <div className={classes.rowElementWrapper}>
+          <TextField
+            id="name"
             label="Name"
             className={classes.textField}
             value={registerEntry.firstName}
             onChange={onChange}
             margin="normal"
           />
-
           <TextField
-            id="standard-name"
-            label="DNI"
-            className={classes.textField}
-            value={registerEntry.firstName}
-            onChange={onChange}
-            margin="normal"
-          />
-          <TextField
-            id="standard-name"
-            label="Visits"
-            className={classes.textField}
-            value={registerEntry.lastName}
-            onChange={onChange}
-            margin="normal"
-          />
-        </div>
-        <div className={classes.elementWrapper}>
-          <div className={classes.highElementWrapper}>
-            <div>
-              <label>Date:</label>
-              {registerEntry.date}
-            </div>
-            <div>
-              <label>Hour:</label>
-              {registerEntry.hour}
-            </div>
-          </div>
-          <TextField
-            id="standard-name"
+            id="lastName"
             label="Last Name"
             className={classes.textField}
             value={registerEntry.lastName}
             onChange={onChange}
             margin="normal"
           />
-          <div>
-            <TextField
-              id="standard-name"
-              label="Company"
-              className={classes.textField}
-              value={registerEntry.lastName}
-              onChange={onChange}
-              margin="normal"
-            />
-          </div>
         </div>
-      </div>
-      <SignatureCanvas
-        penColor="black"
-        backgroundColor="rgba(240,240,240,255)"
-        canvasProps={{ width: 500, height: 200, className: "sigCanvas" }}
-      />
-    </form>
+
+        <div className={classes.rowElementWrapper}>
+          <TextField
+            id="DNI"
+            label="DNI"
+            className={classes.textField}
+            value={registerEntry.dni}
+            onChange={onChange}
+            margin="normal"
+          />
+          <TextField
+            id="company"
+            label="Company"
+            className={classes.textField}
+            value={registerEntry.company}
+            onChange={onChange}
+            margin="normal"
+          />
+        </div>
+        <div className={classes.rowElementWrapper}>
+          <TextField
+            id="visit"
+            label="Visits"
+            className={classes.textField}
+            value={registerEntry.visits}
+            onChange={onChange}
+            margin="normal"
+          />
+        </div>
+        <div className={classes.rowElementWrapper}>
+          <SignatureCanvas
+            penColor="black"
+            backgroundColor="rgba(240,240,240,255)"
+            canvasProps={{ width: 500, height: 200, className: "sigCanvas" }}
+          />
+        </div>
+        <div className={classes.rowButtonElementWrapper}>
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+          >
+            Save
+          </Button>
+        </div>
+      </form>
+    </div>
   );
 };
