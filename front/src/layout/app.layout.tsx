@@ -5,7 +5,8 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
-import { ISODateString } from "../utils";
+import { dateString, timeString } from "../utils";
+import { textAlign } from "@material-ui/system";
 const logo = require("../assets/logo.png");
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -16,10 +17,12 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       flexGrow: 1,
       marginLeft: theme.spacing(1),
-      fontSize: 30
+      fontSize: 30,
+      textAlign: "left"
     },
     clock: {
-      fontSize: 20
+      fontSize: 20,
+      textAlign: "right"
     }
   })
 );
@@ -28,10 +31,12 @@ export const AppLayout: React.FunctionComponent = props => {
   const classes = useStyles(props);
 
   const [currentTime, setCurrentTime] = React.useState("");
+  const [currentDate, setCurrentDate] = React.useState("");
   React.useEffect(() => {
     setInterval(function() {
       const d = new Date();
-      setCurrentTime(ISODateString(d));
+      setCurrentTime(timeString(d));
+      setCurrentDate(dateString(d));
     }, 1000);
   }, []);
 
@@ -44,17 +49,17 @@ export const AppLayout: React.FunctionComponent = props => {
             variant="h6"
             color="inherit"
             className={classes.title}
-            align="left"
-          >
+            align="left">
             Register enter and exit
           </Typography>
           <Typography
             variant="h6"
             color="inherit"
-            className={classes.clock}
-            align="left"
-          >
-            <span>{currentTime}</span>
+            className={classes.clock}>
+            <span>
+              <div>{currentDate}</div>
+              <div>{currentTime}</div>
+            </span>
           </Typography>
         </Toolbar>
       </AppBar>
