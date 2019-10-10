@@ -2,7 +2,7 @@ import { takeEvery, put, call, all } from "redux-saga/effects";
 import { actionIds } from "common-app";
 import { readCollectionUsersCompletedAction } from "core/actions";
 import { getTodayRegisterCollection } from "api";
-import { mappedFromApiToState, mappedFromApiToStateCollection } from "./mappers.saga";
+import { mapFromRegisterApiToRegisterCoreCollection } from "./mappers.saga";
 
 export function* watchReadCollectionUsersRequestStart() {
   yield takeEvery(
@@ -12,6 +12,6 @@ export function* watchReadCollectionUsersRequestStart() {
 }
 function* requestReadCollectionUsers() {
   const readCollectionUsersFromAPi = yield call(getTodayRegisterCollection);
-  const readCollectionMapped = mappedFromApiToStateCollection(readCollectionUsersFromAPi);
+  const readCollectionMapped = mapFromRegisterApiToRegisterCoreCollection(readCollectionUsersFromAPi);
   yield put(readCollectionUsersCompletedAction(readCollectionMapped));
 }

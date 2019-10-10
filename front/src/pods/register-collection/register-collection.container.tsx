@@ -3,23 +3,23 @@ import { RegisterCollectionComponent } from "./register-collection.component";
 import { entryCollectionMockData } from './register-collection.mock';
 import * as CoreModel from "core/reducers/state.model";
 import { connect } from "react-redux";
+import { mapFromRegisterCoreToRegisterViewCollection } from "./register-collection.mapper";
+import { readCollectionUsersStartAction } from "core/actions";
+import { ApplicationState } from "store/reducers";
 
-export type RegisterCollectionState = CoreModel.RegisterEntryEntity[];
+//export type RegisterCollectionState = CoreModel.RegisterEntryEntity[];
 
-const mapStatetoProps = (state: RegisterCollectionState) => ({
-  entryCollection: state
-})
-
-const mapDispatchToProps = dispatch => ({
-connectCurrencyUpdateSockets: () => dispatch(startSocketSubscriptionAction()),
-disconnectCurrencyUpdateSockets: () =>
-  dispatch(stopSocketSubscriptionAction()),
-
+const mapStatetoProps = (state: ApplicationState) => ({
+  entryCollection: mapFromRegisterCoreToRegisterViewCollection(state.coreRootState.registerCollectionState)
 });
 
-export const CurrencyTableContainer = connect(
+const mapDispatchToProps = dispatch => ({
+  onLoadCollection: () => dispatch(readCollectionUsersStartAction()),
+});
+
+export const RegisterCollectionContainer = connect(
   mapStatetoProps,
-mapDispatchToProps
+  mapDispatchToProps
 )(RegisterCollectionComponent);
 
 

@@ -6,5 +6,7 @@ export interface RegisterEntryEntity {
   visits: string;
   entry: Date;
   exit: Date;
+  cardNumber: string;
+  date: Date;
   // signature --> blob / canvas (check this)
 }
