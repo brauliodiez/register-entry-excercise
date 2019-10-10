@@ -50,6 +50,11 @@
   "jest": {
     "preset": "ts-jest",
     "restoreMocks": true,
+    "moduleDirectories": [
+      ".",
+      "src",
+      "node_modules"
+    ],
     "moduleNameMapper": {
       "^api/(.*)$": "/src/api/$1",
       "^common-app/(.*)$": "/src/common-app/$1",
