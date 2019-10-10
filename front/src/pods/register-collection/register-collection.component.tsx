@@ -6,7 +6,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import { entryEntity } from "./register-collection.vm";
+import { EntryEntity } from "./register-collection.vm";
 import CreateIcon from "@material-ui/icons/Create";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -23,13 +23,17 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface Props {
-  entryCollection: entryEntity[];
+  entryCollection: EntryEntity[];
+  onLoadCollection: () => void;
 }
 
 export const RegisterCollectionComponent = (props: Props) => {
-  const { entryCollection } = props;
-
+  const { entryCollection, onLoadCollection } = props;
   const classes = useStyles("");
+
+  React.useEffect(() => {
+    onLoadCollection();
+  }, []);
 
   return (
     <Paper className={classes.root}>

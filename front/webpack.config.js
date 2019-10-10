@@ -15,6 +15,9 @@ module.exports = {
       core: path.resolve(__dirname, "./src/core/"),
       pods: path.resolve(__dirname, "./src/pods/"),
       utils: path.resolve(__dirname, "./src/utils/"),
+      api: path.resolve(__dirname, "./src/api/"),
+      actions: path.resolve(__dirname, "./src/actions"),
+      "common-app": path.resolve(__dirname, "./src/common-app/"),
     },
     extensions: [".js", ".ts", ".tsx"]
   },

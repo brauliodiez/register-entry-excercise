@@ -6,7 +6,8 @@ describe("NameEdit component specs", () => {
   it("should display a label and input elements with empty userName value", () => {
     // Arrange
     const props = {
-      entryCollection: []
+      entryCollection: [],
+      onLoadCollection: () => {},
     };
 
     // Act
