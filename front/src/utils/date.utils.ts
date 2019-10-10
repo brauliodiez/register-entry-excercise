@@ -3,12 +3,14 @@ function pad(n) {
   return n < 10 ? "0" + n : n;
 }
 export function dateString(d) {
-  const day = d.getUTCDate();
-  const month = d.getUTCMonth() + 1;
+  const day = pad(d.getUTCDate());
+  const month = pad(d.getUTCMonth() + 1);
   const year = d.getUTCFullYear();
 
   return `${day}/${month}/${year}`;
 }
 export function timeString(d) {
-  return pad(d.getUTCHours() + 2) + ":" + pad(d.getUTCMinutes());
+  const hour = pad(d.getUTCHours() + 2);
+  const min = pad(d.getUTCMinutes());
+  return `${hour}:${min}`;
 }
