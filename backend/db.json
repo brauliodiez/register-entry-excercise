@@ -16,7 +16,7 @@
     },
     {
       "id": 2,
-      "cardNumber": 1,
+      "cardNumber": 6,
       "date": "2019-10-09",
       "inTime": "07:42",
       "outTime": "17:30",
@@ -27,6 +27,34 @@
       "host": "Spongebob Squarepants",
       "signature": "",
       "picture": ""
+    },
+    {
+      "id": 3,
+      "cardNumber": 41,
+      "date": "2019-10-10",
+      "inTime": "07:12",
+      "outTime": "14:30",
+      "firstName": "Juan",
+      "lastName": "De la Cruz López",
+      "idNumber": "28172536Y",
+      "company": "everis",
+      "host": "Spongebob Squarepants",
+      "signature": "",
+      "picture": ""
+    },
+    {
+      "cardNumber": "28",
+      "date": "2019-10-11",
+      "inTime": "07:12",
+      "outTime": "14:30",
+      "firstName": "Juan",
+      "lastName": "De la Cruz Pérez",
+      "idNumber": "28172536Y",
+      "company": "everis",
+      "host": "Spongebob Squarepants",
+      "signature": "",
+      "picture": "",
+      "id": 4
     }
   ]
 }
