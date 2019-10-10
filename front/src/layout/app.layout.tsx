@@ -2,11 +2,9 @@ import * as React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import AccountCircle from "@material-ui/icons/AccountCircle";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import { dateString, timeString } from "../utils";
-import { textAlign } from "@material-ui/system";
+
 const logo = require("../assets/logo.png");
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -49,13 +47,11 @@ export const AppLayout: React.FunctionComponent = props => {
             variant="h6"
             color="inherit"
             className={classes.title}
-            align="left">
+            align="left"
+          >
             Register enter and exit
           </Typography>
-          <Typography
-            variant="h6"
-            color="inherit"
-            className={classes.clock}>
+          <Typography variant="h6" color="inherit" className={classes.clock}>
             <span>
               <div>{currentDate}</div>
               <div>{currentTime}</div>
