@@ -6,7 +6,7 @@ import { AppLayout } from "layout";
 
 export const RegisterCollectionScene = () => (
   <>
-   <AppLayout></AppLayout>
+   <AppLayout/>
     <RegisterCollectionContainer/>
     <Link to={routesLinks.registerEntry}>Navigate to register entry</Link>
     <Link to={routesLinks.registerExit}>Navigate to register exit</Link>

@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+const logo = require("../assets/logo.png");
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -12,7 +13,8 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1
     },
     title: {
-      flexGrow: 1
+      flexGrow: 1,
+      marginLeft: theme.spacing(1),
     }
   })
 );
@@ -37,7 +39,7 @@ export const AppLayout: React.FunctionComponent = props => {
       <AppBar position="static">
         <Toolbar variant="dense">
           <img
-            src="https://as2.ftcdn.net/jpg/01/91/20/55/500_F_191205513_1umMSGC0e2xJNO4ufUHYhwvOKEuiK5zC.jpg"
+            src={logo}
             alt="Flying free"
             height="40"
             width="40"
@@ -48,7 +50,7 @@ export const AppLayout: React.FunctionComponent = props => {
             className={classes.title}
             align="left"
           >
-            &nbsp;&nbsp;Register enter and exit
+            Register enter and exit
           </Typography>
           <Typography variant="h6" color="inherit" align="right">
             <span>{currentTime}</span>
