@@ -159,7 +159,7 @@ export const RegisterExitComponent = (props: Props) => {
                 <div className={classes.rowElementWrapper}>
                 <SignatureCanvas
                     penColor="black"
-                    backgroundColor="rgba(240,240,240,255)"
+                    backgroundColor="lightgrey"
                     canvasProps={{ width: 500, height: 200, className: "sigCanvas" }}
                 />
         </div>

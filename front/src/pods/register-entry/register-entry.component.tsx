@@ -117,7 +117,7 @@ export const RegisterEntryComponent = (props: Props) => {
       </div>
       <SignatureCanvas
         penColor="black"
-        backgroundColor="rgba(240,240,240,255)"
+        backgroundColor="lightgrey"
         canvasProps={{ width: 500, height: 200, className: "sigCanvas" }}
       />
     </form>
