@@ -32,7 +32,7 @@ export const RegisterCollectionComponent = (props: Props) => {
   const classes = useStyles("");
 
   React.useEffect(() => {
-    onLoadCollection;
+    onLoadCollection();
   }, []);
 
   return (
