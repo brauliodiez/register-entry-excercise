@@ -15,11 +15,11 @@ const useStyles = makeStyles((theme: Theme) =>
             display: "flex",
             marginLeft: theme.spacing(1),
             marginRight: theme.spacing(1),
-            width: 200,
+            width: "12.5rem",
         },
         dense: {
             display: "flex",
-            marginTop: 19
+            marginTop: "1.1875rem"
         },
         columnElementWrapper: {
             display: "flex",
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
             display: "flex",
             marginLeft: theme.spacing(1),
             marginRight: theme.spacing(1),
-            width: 100
+            width: "6.25rem"
         },
         innerLeft : {
             display: "flex",
@@ -53,18 +53,26 @@ const useStyles = makeStyles((theme: Theme) =>
             justifyContent: "center",
             margin: theme.spacing(1),
         },
+        specialInput: {
+            display: "flex",
+            marginLeft: theme.spacing(1),
+            marginRight: theme.spacing(1),
+            marginTop: "1rem",
+            marginBottom: "0.5rem",
+            width: "9 rem"
+        },
     })
 );
 
 interface Props {
-    onChange: (e: any) => void;
+    onSubmit: (e: any) => void;
     registerExit: registerExitViewModel;
 }
 
 export const RegisterExitComponent = (props: Props) => {
     const classes = useStyles("");
 
-    const { onChange, registerExit } = props;
+    const { onSubmit, registerExit } = props;
 
 
     return (
@@ -79,7 +87,6 @@ export const RegisterExitComponent = (props: Props) => {
                         disabled={true}
                         className={classes.textField}
                         value={registerExit.cardNumber}
-                        onChange={onChange}
                         margin="normal"
                     />
 
@@ -89,7 +96,7 @@ export const RegisterExitComponent = (props: Props) => {
                         type="date"
                         defaultValue={registerExit.date}
                         disabled = {true}
-                        className={classes.textField}
+                        className={classes.specialInput}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -100,7 +107,7 @@ export const RegisterExitComponent = (props: Props) => {
                         type="time"
                         defaultValue={registerExit.hour}
                         disabled = {true}
-                        className={classes.textField}
+                        className={classes.specialInput}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -116,7 +123,6 @@ export const RegisterExitComponent = (props: Props) => {
                         className={classes.textField}
                         value={registerExit.firstName}
                         disabled = {true}
-                        onChange={onChange}
                         margin="normal"
                     />
                     <TextField
@@ -125,7 +131,6 @@ export const RegisterExitComponent = (props: Props) => {
                         className={classes.textField}
                         value={registerExit.lastName}
                         disabled = {true}
-                        onChange={onChange}
                         margin="normal"
                     />
                 </div>
@@ -137,7 +142,6 @@ export const RegisterExitComponent = (props: Props) => {
                         className={classes.textField}
                         value={registerExit.dni}
                         disabled = {true}
-                        onChange={onChange}
                         margin="normal"
                     />
                     <TextField
@@ -146,7 +150,6 @@ export const RegisterExitComponent = (props: Props) => {
                         className={classes.textField}
                         value={registerExit.company}
                         disabled = {true}
-                        onChange={onChange}
                         margin="normal"
                     />
                 </div>
@@ -158,19 +161,18 @@ export const RegisterExitComponent = (props: Props) => {
                         className={classes.textField}
                         value={registerExit.visits}
                         disabled = {true}
-                        onChange={onChange}
                         margin="normal"
                     />
                 </div>
                 <div className={classes.rowElementWrapper}>
                 <SignatureCanvas
                     penColor="black"
-                    backgroundColor="rgba(240,240,240,255)"
+                    backgroundColor="lightgrey"
                     canvasProps={{ width: 500, height: 200, className: "sigCanvas" }}
                 />
         </div>
                 <div className={classes.rowButtonElementWrapper}>
-                <Button variant="contained" color="primary" className={classes.button}>
+                <Button variant="contained" color="primary" className={classes.button} onSubmit={onSubmit}>
                     Save
                 </Button>
                 </div>
