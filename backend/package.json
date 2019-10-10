@@ -110,11 +110,6 @@
   "engines": {
     "node": ">=8"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test"
-    }
-  },
   "jest": {
     "testURL": "http://localhost/"
   }
