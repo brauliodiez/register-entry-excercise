@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
-      width: "12.5rem"
+      width: "18rem"
     },
     dense: {
       display: "flex",
@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     rowElementWrapper: {
       display: "flex",
-      flexDirection: "row"
+      flexDirection: "row",
+      justifyContent: "center"
     },
     rowButtonElementWrapper: {
       display: "flex",
@@ -52,6 +53,14 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       justifyContent: "center",
       margin: theme.spacing(1)
+    },
+    specialInput: {
+      display: "flex",
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      marginTop: "1rem",
+      marginBottom: "0.5rem",
+      width: "9 rem"
     }
   })
 );
@@ -85,7 +94,7 @@ export const RegisterEntryComponent = (props: Props) => {
             type="date"
             defaultValue={registerEntry.date}
             disabled={true}
-            className={classes.textField}
+            className={classes.specialInput}
             InputLabelProps={{
               shrink: true
             }}
@@ -96,7 +105,7 @@ export const RegisterEntryComponent = (props: Props) => {
             type="time"
             defaultValue={registerEntry.hour}
             disabled={true}
-            className={classes.textField}
+            className={classes.specialInput}
             InputLabelProps={{
               shrink: true
             }}
