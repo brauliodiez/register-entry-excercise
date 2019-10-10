@@ -27,8 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     rowElementWrapper: {
       display: "flex",
-      flexDirection: "row",
-      justifyContent: "center"
+      flexDirection: "row"
     },
     rowButtonElementWrapper: {
       display: "flex",
@@ -61,6 +60,14 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: "1rem",
       marginBottom: "0.5rem",
       width: "9 rem"
+    },
+    rowSignatureWrapper : {
+      display: "flex",
+      justifyContent: "center"
+    },
+    sigCanvas : {
+      width : 500,
+      height : 200
     }
   })
 );
@@ -161,13 +168,13 @@ export const RegisterEntryComponent = (props: Props) => {
             margin="normal"
           />
         </div>
-        <div className={classes.rowElementWrapper}>
-          <SignatureCanvas
-            penColor="black"
-            backgroundColor="lightgrey"
-            canvasProps={{ width: 500, height: 200, className: "sigCanvas" }}
-          />
-        </div>
+          <div className={classes.rowSignatureWrapper}>
+              <SignatureCanvas
+                  penColor="black"
+                  backgroundColor="lightgrey"
+                  canvasProps={{ className: classes.sigCanvas }}
+              />
+          </div>
         <div className={classes.rowButtonElementWrapper}>
           <Button
             variant="contained"
