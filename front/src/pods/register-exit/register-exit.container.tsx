@@ -15,7 +15,7 @@ export const RegisterExitContainer = () => {
   return (
     <RegisterExitComponent
       registerExit={registerExitState}
-      onChange={()=>{}}
+      onSubmit={()=>{}}
     />
   );
 };
