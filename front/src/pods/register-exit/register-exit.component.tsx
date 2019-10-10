@@ -57,14 +57,14 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 interface Props {
-    onChange: (e: any) => void;
+    onSubmit: (e: any) => void;
     registerExit: registerExitViewModel;
 }
 
 export const RegisterExitComponent = (props: Props) => {
     const classes = useStyles("");
 
-    const { onChange, registerExit } = props;
+    const { onSubmit, registerExit } = props;
 
 
     return (
@@ -79,7 +79,6 @@ export const RegisterExitComponent = (props: Props) => {
                         disabled={true}
                         className={classes.textField}
                         value={registerExit.cardNumber}
-                        onChange={onChange}
                         margin="normal"
                     />
 
@@ -116,7 +115,6 @@ export const RegisterExitComponent = (props: Props) => {
                         className={classes.textField}
                         value={registerExit.firstName}
                         disabled = {true}
-                        onChange={onChange}
                         margin="normal"
                     />
                     <TextField
@@ -125,7 +123,6 @@ export const RegisterExitComponent = (props: Props) => {
                         className={classes.textField}
                         value={registerExit.lastName}
                         disabled = {true}
-                        onChange={onChange}
                         margin="normal"
                     />
                 </div>
@@ -137,7 +134,6 @@ export const RegisterExitComponent = (props: Props) => {
                         className={classes.textField}
                         value={registerExit.dni}
                         disabled = {true}
-                        onChange={onChange}
                         margin="normal"
                     />
                     <TextField
@@ -146,7 +142,6 @@ export const RegisterExitComponent = (props: Props) => {
                         className={classes.textField}
                         value={registerExit.company}
                         disabled = {true}
-                        onChange={onChange}
                         margin="normal"
                     />
                 </div>
@@ -158,7 +153,6 @@ export const RegisterExitComponent = (props: Props) => {
                         className={classes.textField}
                         value={registerExit.visits}
                         disabled = {true}
-                        onChange={onChange}
                         margin="normal"
                     />
                 </div>
@@ -170,7 +164,7 @@ export const RegisterExitComponent = (props: Props) => {
                 />
         </div>
                 <div className={classes.rowButtonElementWrapper}>
-                <Button variant="contained" color="primary" className={classes.button}>
+                <Button variant="contained" color="primary" className={classes.button} onSubmit={onSubmit}>
                     Save
                 </Button>
                 </div>
