@@ -5,7 +5,6 @@ dist/
 typings/
 *.orig
 .idea/
-*/src/**/*.js
 */src/**/*.js.map
 package-lock.json
 **/*.log
