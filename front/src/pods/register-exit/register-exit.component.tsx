@@ -53,6 +53,14 @@ const useStyles = makeStyles((theme: Theme) =>
             justifyContent: "center",
             margin: theme.spacing(1),
         },
+        specialInput: {
+            display: "flex",
+            marginLeft: theme.spacing(1),
+            marginRight: theme.spacing(1),
+            marginTop: "1rem",
+            marginBottom: "0.5rem",
+            width: "9 rem"
+        },
     })
 );
 
@@ -88,7 +96,7 @@ export const RegisterExitComponent = (props: Props) => {
                         type="date"
                         defaultValue={registerExit.date}
                         disabled = {true}
-                        className={classes.textField}
+                        className={classes.specialInput}
                         InputLabelProps={{
                             shrink: true,
                         }}
@@ -99,7 +107,7 @@ export const RegisterExitComponent = (props: Props) => {
                         type="time"
                         defaultValue={registerExit.hour}
                         disabled = {true}
-                        className={classes.textField}
+                        className={classes.specialInput}
                         InputLabelProps={{
                             shrink: true,
                         }}
