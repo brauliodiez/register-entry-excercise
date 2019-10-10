@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: "flex-end"
     },
     button: {
+        width:"100%",
       display: "flex",
       justifyContent: "center",
       margin: theme.spacing(1)
