@@ -1,20 +1,22 @@
 import { RegisterEntityApi } from "api/model";
-import * as CoreModel from "core/reducers/state.model"
+import * as CoreModel from "core/reducers/state.model";
 
-
-export type RegisterEntityApiState = RegisterEntityApi[];
 export type RegisterCollectionState = CoreModel.RegisterEntryEntity[];
 
-export const mappedFromApiToState = (apiModel: RegisterEntityApiState): RegisterCollectionState => {
-     const registerStateModel: RegisterCollectionState = [];
+export const mappedFromApiToState = (apiModel: RegisterEntityApi):CoreModel.RegisterEntryEntity  => ({
+  firstname: apiModel.firstName,
+  lastname: apiModel.lastName,
+  dni: apiModel.idNumber,
+  company: apiModel.company,
+  visits: apiModel.host,
+  entry: new Date(`${apiModel.date} ${apiModel.inTime}`),
+  exit: new Date(`${apiModel.date} ${apiModel.outTime}`)
+});
 
-     return registerStateModel.map(apiModel => ({
-        firstname: apiModel.firstname,
-        lastname: apiModel.lastname,
-        dni: apiModel.dni,
-        company: apiModel.company,
-        visits: apiModel.visits,
-        entry: apiModel.entry,
-        exit: apiModel.exit,
-     }))
-   }
+export const mappedFromApiToStateCollection = (
+  apiModelCollection: RegisterEntityApi[]
+): RegisterCollectionState => {
+  return apiModelCollection.map((apiModel: RegisterEntityApi) =>
+    mappedFromApiToState(apiModel)
+  );
+};
