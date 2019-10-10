@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "10"
-install:
-  - npm install
 script:
+  - cd front
+  - npm install
   - npm test
