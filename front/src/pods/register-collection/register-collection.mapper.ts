@@ -1,9 +1,6 @@
-import { RegisterEntityApi } from "api/model";
 import * as CoreModel from "core/reducers/state.model";
 import * as vm from "./register-collection.vm";
 import { RegisterCollectionState } from "core/reducers/register-collection.reducer";
-
-//export type RegisterCollectionState = CoreModel.RegisterEntryEntity[];
 
 export const mapFromRegisterCoreToRegisterView = (coreModel: CoreModel.RegisterEntryEntity): vm.EntryEntity  => ({
   firstName: coreModel.firstname,

@@ -11,7 +11,3 @@ export const readCollectionUsersStartAction = (): BaseAction => ({
     payload: userCollection
   });
   
-  export const insertNewUserAction = (newUser: RegisterEntryEntity): BaseAction => ({
-    type: actionIds.INSERT_NEW_USER,
-    payload: newUser
-  });

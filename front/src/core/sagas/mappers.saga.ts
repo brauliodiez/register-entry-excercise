@@ -1,9 +1,9 @@
-import { RegisterEntityApi } from "api/model";
+import * as ApiModel from 'api/model';
 import * as CoreModel from "core/reducers/state.model";
 import { RegisterCollectionState } from "core/reducers/register-collection.reducer";
 
 
-export const mapFromRegisterApiToRegisterCore = (apiModel: RegisterEntityApi):CoreModel.RegisterEntryEntity  => ({
+export const mapFromRegisterApiToRegisterCore = (apiModel: ApiModel.RegisterEntityApi):CoreModel.RegisterEntryEntity  => ({
   firstname: apiModel.firstName,
   lastname: apiModel.lastName,
   dni: apiModel.idNumber,
@@ -15,6 +15,6 @@ export const mapFromRegisterApiToRegisterCore = (apiModel: RegisterEntityApi):Co
   date: new Date(`${apiModel.date}`),
 });
 
-export const mapFromRegisterApiToRegisterCoreCollection = (apiModelCollection: RegisterEntityApi[]): RegisterCollectionState => 
+export const mapFromRegisterApiToRegisterCoreCollection = (apiModelCollection: ApiModel.RegisterEntityApi[]): RegisterCollectionState => 
 apiModelCollection.map(mapFromRegisterApiToRegisterCore);
 

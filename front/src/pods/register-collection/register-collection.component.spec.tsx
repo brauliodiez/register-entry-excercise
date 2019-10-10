@@ -7,7 +7,7 @@ describe("NameEdit component specs", () => {
     // Arrange
     const props = {
       entryCollection: [],
-      onLoadCollection: () => {}
+      onLoadCollection: () => {},
     };
 
     // Act

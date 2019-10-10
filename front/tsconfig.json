@@ -20,7 +20,7 @@
       "pods": ["./pods/"],
       "common-app": ["./common-app/"],
       "api": ["./api/"],
-      "actions": ["./actions/"]
+      "actions": ["./actions/"],
     }
   }
 }
