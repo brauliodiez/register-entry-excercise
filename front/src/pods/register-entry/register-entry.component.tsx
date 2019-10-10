@@ -15,11 +15,11 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
-      width: 200
+      width: "12.5rem"
     },
     dense: {
       display: "flex",
-      marginTop: 19
+      marginTop: "1.1875rem"
     },
     columnElementWrapper: {
       display: "flex",
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex",
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
-      width: 100
+      width: "1rem"
     },
     innerLeft: {
       display: "flex",
