@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
             display: "flex",
             marginLeft: theme.spacing(1),
             marginRight: theme.spacing(1),
-            width: "12.5rem",
+            width: "18rem",
         },
         dense: {
             display: "flex",
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
             display: "flex",
             marginLeft: theme.spacing(1),
             marginRight: theme.spacing(1),
-            width: "6.25rem"
+            width: "1rem"
         },
         innerLeft : {
             display: "flex",
@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme: Theme) =>
             alignItems : "flex-end"
         },
         button: {
+            width:"100%",
             display:"flex",
             justifyContent: "center",
             margin: theme.spacing(1),
@@ -61,6 +62,14 @@ const useStyles = makeStyles((theme: Theme) =>
             marginBottom: "0.5rem",
             width: "9 rem"
         },
+        rowSignatureWrapper : {
+            display: "flex",
+            justifyContent: "center"
+        },
+        sigCanvas : {
+            width : 500,
+            height : 200
+        }
     })
 );
 
@@ -164,13 +173,13 @@ export const RegisterExitComponent = (props: Props) => {
                         margin="normal"
                     />
                 </div>
-                <div className={classes.rowElementWrapper}>
+                <div className={classes.rowSignatureWrapper}>
                 <SignatureCanvas
                     penColor="black"
                     backgroundColor="lightgrey"
-                    canvasProps={{ width: 500, height: 200, className: "sigCanvas" }}
+                    canvasProps={{ className: classes.sigCanvas }}
                 />
-        </div>
+                </div>
                 <div className={classes.rowButtonElementWrapper}>
                 <Button variant="contained" color="primary" className={classes.button} onSubmit={onSubmit}>
                     Save

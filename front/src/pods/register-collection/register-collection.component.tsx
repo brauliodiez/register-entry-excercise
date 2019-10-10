@@ -8,6 +8,8 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { EntryEntity } from "./register-collection.vm";
 import CreateIcon from "@material-ui/icons/Create";
+import {Button} from "@material-ui/core";
+import {Add} from "@material-ui/icons";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -18,7 +20,11 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     table: {
       minWidth: 650
-    }
+    },
+    button: {
+      width:"100%",
+      margin: theme.spacing(1)
+    },
   })
 );
 
@@ -36,6 +42,7 @@ export const RegisterCollectionComponent = (props: Props) => {
   }, []);
 
   return (
+    <>
     <Paper className={classes.root}>
       <Table className={classes.table}>
         <TableHead>
@@ -78,5 +85,9 @@ export const RegisterCollectionComponent = (props: Props) => {
         </TableBody>
       </Table>
     </Paper>
-  );
+      <Button variant="contained" color="primary" className={classes.button}>
+      Add new entry
+    </Button>
+    </>
+);
 };
